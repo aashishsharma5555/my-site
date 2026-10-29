@@ -1,0 +1,16 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+
+name: mysite-cluster
+
+nodes:
+  - role: control-plane
+
+    extraPortMappings:
+      - containerPort: 30080
+        hostPort: 80
+        listenAddress: "0.0.0.0"
+        protocol: TCP
+
+  - role: worker
+  - role: worker
