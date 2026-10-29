@@ -16,7 +16,7 @@ spec:
       topologySpreadConstraints:
         - maxSkew: 1
           topologyKey: kubernetes.io/hostname # CHANGED: Uses standard node hostname topology
-          whenUnsatisfiable: ScheduleAnyway   # CHANGED: Allows scheduling on single nodes/local setups
+          whenUnsatisfiable: DoNotSchedule   # CHANGED: Allows scheduling on single nodes/local setups
           labelSelector:
             matchLabels:
               app: mysite
